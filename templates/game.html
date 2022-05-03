@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        center{
+            position: absolute;
+            top:22%;left:35%;
+            box-shadow: 0 0 5px 5px rgb(58, 57, 57);
+            padding:50px;
+            background-color: rgb(194, 221, 245);
+        }
+        button{
+             background: #ff0505;
+            	color: white;
+        }
+        body{
+            background-color: rgb(250, 142,0);
+        }
+        .card{
+            position: absolute;
+            top:25%;right:14%;
+        }
+        .dice{
+            position: absolute;
+            top:25%;
+            left:18%;
+        }
+    </style>
+    <script>
+        function dice(){
+            document.location="../dice/";
+        }
+    </script>
+</head>
+<body>
+   <img class="card" src="../static/main1.jfif">
+   <img class="dice" src="../static/download.jfif">
+    <center>
+        <img id="title" src="../static/main2.jfif" >
+    <H2>WELLCOME TO GAMES ZONE  <br>{{user}}<br></H2><br>
+    <p>"SELECT GAME YOU WANT TO PLAY"</p><br>
+    <button onclick="dice()">DICEGAME</button> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="document.location='../cards/'">CARDS GAME</button>
+</center>
+</body>
+</html>

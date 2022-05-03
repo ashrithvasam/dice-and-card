@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <style>
+        center{
+            position:absolute;
+            left:35%;
+            top:5%;
+            box-shadow: 0 0 5px 5px rgb(58, 57, 57);
+            padding:36px;
+            background-color: rgb(194, 221, 245);
+        }
+        body{
+            
+            background-color: rgb(250,142, 0);
+        }
+        button{
+             background: #ff0505;
+            	color: white;
+        }
+    </style>
+    <script type="text/javascript">
+    var arr=[0];
+    var j=1;
+    var k;
+        function Game(){
+            var x=document.getElementById("s");
+    var y=x.options[x.selectedIndex].text;
+    var y=parseInt(y);  
+    k=y;
+            for(var i=1;i<=y;i++){
+                arr.push(Math.floor(1+Math.random()*6));
+            }
+            
+            document.getElementById('p').innerHTML+="<button onclick='roll()'>roll dice</button><br>"
+            
+        }
+        
+        function maxid(){
+            var max=0;
+            for(var a=0;a<=k;a++){
+                if(arr[max]<arr[a]){
+                    max=a;
+                }
+            }
+          
+            return max;
+           
+        }
+        
+      
+        function roll( ){
+            if(arr[j]==1){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" : "+arr[j]+" &nbsp <img height='30px' width='30px' src='../static/face1.jfif'/>"+"<br>";
+        }
+            else{
+                if(j==k){
+                    cont();
+                    document.getElementById('p').innerHTML+="<br> CONGRATS! To Player "+maxid()+"  won the match <br> Match Ended <br><br> <button onclick='document.location.reload()'>start new game</button>";
+                }
+                else{
+                cont();}
+            }
+            j++;  
+        }
+        function cont(){
+            if(arr[j]==2){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" :"+arr[j]+"&nbsp <img src='../static/face2.png' height='30px' width='30px'/> <br>";}
+            if(arr[j]==3){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" :"+arr[j]+"&nbsp <img src='../static/face3.png' height='30px' width='30px'/> <br>";}
+            if(arr[j]==4){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" :"+arr[j]+"&nbsp <img src='../static/face4.png' height='30px' width='30px'/> <br>";}
+            if(arr[j]==5){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" :"+arr[j]+"&nbsp <img src='../static/face5.png' height='30px' width='30px'/> <br>";}
+            if(arr[j]==6){
+            document.getElementById("p").innerHTML+="<br>"+"player "+j+" :"+arr[j]+"&nbsp <img src='../static/face6.png' height='30px' width='30px'/> <br>";}
+  
+  
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <img src="../static/download.jfif"/>
+    <h2>WELCOME TO DICE GAME</h2>
+    <br>
+    <h4><label for="players" >Select number of players:
+        <select for="players" id="s">
+            <option selected="selected" value="4" >4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+        </select>
+    </label></h4>
+    <button onclick="Game()">Start Game</button>
+<p id="p"></p>
+</center>
+</body>
+</html>

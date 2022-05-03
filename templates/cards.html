@@ -1,0 +1,196 @@
+<script type="text/javascript">
+			function myFunction() {
+				var arr = ["🂡","🂢","🂣","🂤","🂥","🂦","🂧","🂨","🂩","🂪","🂫","🂭","🂮","🂱","🂲","🂳","🂴","🂵","🂶","🂷","🂸","🂹","🂺","🂻","🂽","🂾","🃁","🃂","🃃","🃄","🃅","🃆","🃇","🃈","🃉","🃊","🃋","🃍","🃎","🃑","🃒","🃓","🃔","🃕","🃖","🃗","🃘","🃙","🃚","🃛","🃝","🃞"];
+  			  	var n = document.getElementById("sets").value;
+		  		var x = document.getElementById("players").value;
+		  		function RandomNums(quantity){
+  					const arr_new = [];
+  					while(arr_new.length < quantity){
+    					var a = Math.floor(Math.random() * 52);
+    					if(arr_new.indexOf(a) === -1) {
+    						arr_new.push(arr[a]);
+    						var m = parseInt(a%13);
+    						n = m + parseInt(n);
+  						}
+  					}
+					return(arr_new);
+				}
+			   	if(x == 1) {
+					document.querySelector(".card1").innerHTML="<table><tr><td> </td><td>Player 1</td><td>Result</td></tr><tr><td> </td><td>"+RandomNums(document.getElementById("sets").value) +"</td><td>Player 1 always wins</td></tr><tr><td>Total:</td><td>"+n+"</td><td> </td></tr></table>";
+		  		}
+		  		else if(x == 2) {
+				  	var arr1 = [];
+		  			arr1 = RandomNums(document.getElementById("sets").value);
+		  			var n1 = n;
+		  			n = document.getElementById("sets").value;
+		  			var arr2 = [];
+		  			arr2 = RandomNums(document.getElementById("sets").value);
+		  			var n2 = n;
+		  			var m1 = "",m2 = "",m3 = "";
+		  			if(n1 == n2) {
+		  				m3 = "Its a Draw,All ";
+		  			}
+		  			else {
+		  				if(n1 > n2){
+		  					m1 = "Player1 ";
+		  				}
+		  				else if(n1 < n2){
+		  					m2 = "Player2 ";
+		  				}
+		  			}
+					document.querySelector(".card1").innerHTML="<table><tr><td> </td><td>Player 1</td><td>Player 2</td><td>Result</td></tr><tr><td> </td><td>"+ arr1 +"</td><td>"+arr2+"</td><td>"+m1+m2+m3+"wins</td></tr><tr><td>Total:</td><td>"+n1+"</td><td>"+n2+"</td><td> </td></tr></table>";
+		  		}
+			  	else if(x == 3) {
+		  			var arr1 = [];
+		  			arr1 = RandomNums(document.getElementById("sets").value);
+		  			var n1 = n;
+		  			n = document.getElementById("sets").value;
+		  			var arr2 = [];
+		  			arr2 = RandomNums(document.getElementById("sets").value);
+		  			var n2 = n;
+		  			n = document.getElementById("sets").value;
+		  			arr3 = RandomNums(document.getElementById("sets").value);
+		  			var n3 = n;
+		   			var m1 = "",m2 = "",m3 = "",m4 = "";
+					var max = Math.max(n1,n2,n3);
+					if(n1 == n2 && n1 == n3) {
+			    		m4 = "Match draw.All ";
+					}
+					else {
+						if(max == n1) {
+							m1 = "Player1 ";
+						}
+					 	if(max == n2) {
+							m2 = "Player2 ";
+						}
+						if(max == n3) {
+							m3 = "Player3 ";
+						}
+					}
+					document.querySelector(".card1").innerHTML="<table><tr><td> </td><td>Player 1</td><td>Player 2</td><td>Player 3</td><td>Result</td></tr><tr><td> </td><td>"+ arr1 +"</td><td>"+arr2+"</td><td>"+arr3+"</td><td>"+m1+m2+m3+m4+"wins</td></tr><tr><td>Total:</td><td>"+n1+"</td><td>"+n2+"</td><td>"+n3+"</td><td> </td></tr></table>";
+		  		}
+		  		else {
+					var arr1 = [];
+		  			arr1 = RandomNums(document.getElementById("sets").value);
+		  			var n1 = n;
+		  			n = document.getElementById("sets").value;
+		  			var arr2 = [];
+		  			arr2 = RandomNums(document.getElementById("sets").value);
+		  			var n2 = n;
+		  			n = document.getElementById("sets").value;
+		  			arr3 = RandomNums(document.getElementById("sets").value);
+		  			var n3 = n;
+		  			n = document.getElementById("sets").value;
+		  			arr4 = RandomNums(document.getElementById("sets").value);
+		  			var n4 = n;
+		    		var m1 = "",m2 = "",m3 = "",m4 = "",m5 = "";
+					var max = Math.max(n1,n2,n3,n4);
+					if(n1 == n2 && n1 == n3 && n4 == n1) {
+			    		m5 = "Match draw.All ";
+					}
+					else {
+						if(max == n1) {
+							m1 = "Player1 ";
+						}
+						if(max == n2) {
+							m2 = "Player2 ";
+						}
+						if(max == n3) {
+							m3 = "Player3 ";
+						}
+						if(max == n4) {
+							m4 = "Player4 ";
+						}
+					}
+					document.querySelector(".card1").innerHTML="<table><tr><td> </td><td>Player 1</td><td>Player 2</td><td>Player 3</td><td>Player 4</td><td>Result</td></tr><tr><td> </td><td>"+arr1+"</td><td>"+arr2+"</td><td>"+arr3+"</td><td>"+arr4+"</td><td>"+m1+m2+m3+m4+m5+"wins</td></tr><tr><td>Total:</td><td>"+n1+"</td><td>"+n2+"</td><td>"+n3+"</td><td>"+n4+"</td><td> </td></tr></table>";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>WELCOME TO GAME OF CARDS</h1>
+		<img class="img" src="https://m.media-amazon.com/images/I/511kcZbYtJL._SL1000_.jpg">
+		<div class="container">
+                 
+                     <style>
+			h1 {
+				margin: 25px 0px 0px 490px;
+				font-size: 35px;
+			}
+			h2 {
+				font-size: 25px;
+				margin: 5px 0px 5px 595px;
+			}
+			.img {
+				height: 225px;
+				width: 335px;
+				margin: 25px 550px 10px 600px;
+			}
+			.dice1{
+				margin-left: 100px;
+				text-align: center;
+    			display: inline-block;
+				font-size: 30px;
+				width: 90%;
+			}
+			table{
+				border: 2px solid white;
+				width: 100%;
+				height: 60%;
+				border-width: 2px;
+			}
+			#demo{
+				margin-left: 400px;
+				font-size: 10px;
+			}
+			label{
+				font-size: 30px;
+			}
+			.button {
+            	background: #ff0505;
+            	color: white;
+            	border-radius: 7px;
+            	font-size: 30px;
+            	padding: 5px 20px 5px 20px;
+            	margin-left: 315px;
+            	margin-right: 315px;
+			}
+			.container {
+    			width: 70%;
+  			  	margin: auto;
+    			text-align: center;
+			}
+			select {
+			    font-size: 20px;
+    			width: 50px;
+    			height: 35px;
+			}
+			input{
+				font-size: 20px;
+    			width: 50px;
+	   			height: 25px;
+			}
+			body {
+				background-color: rgb(250, 142, 0);
+				font-family: cursive;
+				color: rgb(255, 255, 255);
+			}
+			  </style>
+
+
+			<form>
+				<label for="players">Choose no of players:</label>
+	    		<select id="players">
+	    			<option value="1">1</option>
+    				<option value="2">2</option>
+		    		<option value="3">3</option>
+    				<option value="4">4</option>
+				</select><br>
+				<label for="sets">Enter no of sets:</label>
+	    		<input type="text" id="sets" name="" required>
+			</form><br>
+			<button type="button" class="button" onclick="myFunction()">play</button>
+			<p id="demo"></p>
+			<div class="card1"></div>
+		</div>
+	</body>

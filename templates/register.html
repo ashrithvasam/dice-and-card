@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style type="text/css">
+        form{
+            width:30%;
+           box-shadow:  0 0px 5px 5px rgb(58, 57, 57);
+       
+           position :relative; top:100px;
+           background-color: rgb(194, 221, 245);
+         
+           padding: 20px;
+        }
+        button{
+                  background: #ff0505;
+            	   color: white;
+           }
+        body{
+               
+               background-color: rgb(250, 142, 0);
+           }
+        h1{
+            margin-top: 100px;
+        }
+       
+       </style>
+      
+</head>
+<body>
+    <center>
+    <form action="registration" method="Post">
+        {% csrf_token %}
+        <img src="../static/main2.jfif"/>
+        <h2 >Register</h2>
+        <table>
+            <tr>
+       <td>Full Name:&nbsp;</td><td><input id="user" type="text" name="user" required="required"></input><br><br></td></tr>
+       <tr><td>E mail: &nbsp; </td><td><input id="email" type="email" name="email" required="required"/><br><br></td></tr>
+        <tr><td>phone number:  </td><td><input id="phno" type="text" name="phno" required="required"/><br><br></td></tr>
+       <tr><td> password: &nbsp; &nbsp;</td><td><input type="password" name="pass" required="required"></input><br><br></td></tr>
+       <tr><td> Retype password: &nbsp;</td><td><input type="password" name="repass" required="required"></input><br><br></td></tr>
+        <tr><td><button  type="submit" name="submit">submit</button>&nbsp;</td><td>&nbsp;<button type="reset" name="reset">clear</button></td></tr> 
+    </table>
+    </form>
+    </center>
+</body>
+</html>
